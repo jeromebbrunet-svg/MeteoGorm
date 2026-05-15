@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
   --gold:#f0c060;
   --text:#e8f0fc;
@@ -28,7 +27,6 @@
   --tint-shower:rgba(75,135,200,0.16);
   --tint-default:rgba(255,255,255,0.04);
 }
-
 body{
   min-height:100vh;
   background:linear-gradient(155deg,#081524 0%,#0d2244 45%,#0a1830 100%);
@@ -36,11 +34,9 @@ body{
   display:flex;flex-direction:column;align-items:center;
   padding:2rem 1rem 5rem;overflow-x:hidden;
 }
-
 .stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) ease-in-out infinite;opacity:0}
 @keyframes twinkle{0%,100%{opacity:0}50%{opacity:var(--op,.6)}}
-
 .app{position:relative;z-index:1;width:100%;max-width:860px}
 
 /* Header */
@@ -51,20 +47,10 @@ header{text-align:center;margin-bottom:2.5rem}
 
 /* Search */
 .search-box{display:flex;gap:.7rem;margin-bottom:2.5rem}
-.search-input{
-  flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);
-  border-radius:12px;padding:.85rem 1.1rem;color:var(--text);
-  font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:300;outline:none;
-  transition:background .2s,border-color .2s
-}
+.search-input{flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);border-radius:12px;padding:.85rem 1.1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:300;outline:none;transition:background .2s,border-color .2s}
 .search-input::placeholder{color:var(--text-muted)}
 .search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.32)}
-.search-btn{
-  background:var(--gold);border:none;border-radius:12px;padding:.85rem 1.4rem;
-  color:#1a0e00;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;
-  cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:.4rem;
-  transition:background .2s,transform .1s
-}
+.search-btn{background:var(--gold);border:none;border-radius:12px;padding:.85rem 1.4rem;color:#1a0e00;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:500;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:.4rem;transition:background .2s,transform .1s}
 .search-btn:hover{background:#f5d080}
 .search-btn:active{transform:scale(.97)}
 .search-btn svg{width:15px;height:15px;flex-shrink:0}
@@ -78,7 +64,6 @@ header{text-align:center;margin-bottom:2.5rem}
 .loader-dot:nth-child(2){animation-delay:.2s}
 .loader-dot:nth-child(3){animation-delay:.4s}
 @keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
-
 #weather-output{display:none}
 #weather-output.visible{display:block}
 
@@ -88,11 +73,7 @@ header{text-align:center;margin-bottom:2.5rem}
 .location-country{font-size:.8rem;color:var(--text-muted);font-weight:300;letter-spacing:.05em;margin-top:.2rem}
 
 /* Today hero */
-.today-hero{
-  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
-  border-radius:20px;padding:1.5rem 1.8rem;margin-bottom:1.6rem;
-  display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:center
-}
+.today-hero{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:1.5rem 1.8rem;margin-bottom:1.6rem;display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:center}
 .today-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;color:var(--text-muted);font-weight:500;margin-bottom:.35rem}
 .today-temp{font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,7vw,4.5rem);line-height:1;color:var(--gold)}
 .today-desc{font-size:.92rem;color:var(--text-muted);font-weight:300;margin-top:.3rem}
@@ -105,95 +86,137 @@ header{text-align:center;margin-bottom:2.5rem}
 .sun-icon{width:17px;height:17px;flex-shrink:0;color:var(--gold)}
 
 /* Chart */
-.chart-wrap{
-  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);
-  border-radius:18px;padding:1.1rem 1rem 1rem;margin-bottom:1.4rem;overflow:hidden
-}
-.chart-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;padding:0 .3rem}
+.chart-wrap{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:18px;padding:1.1rem 1rem 1rem;margin-bottom:1.4rem;overflow:hidden}
+.chart-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.9rem;padding:0 .3rem;gap:1rem;flex-wrap:wrap}
 .chart-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);font-weight:500}
-.chart-legend{display:flex;gap:.9rem;flex-wrap:wrap}
-.cl-item{display:flex;align-items:center;gap:.35rem;font-size:.65rem;color:var(--text-muted);letter-spacing:.05em;text-transform:uppercase}
-.cl-line{width:18px;height:2px;border-radius:1px;flex-shrink:0}
-.cl-dashed{width:18px;height:0;border-top:2px dashed currentColor;flex-shrink:0}
+.chart-legend{display:flex;gap:.75rem;flex-wrap:wrap}
+.cl-item{display:flex;align-items:center;gap:.32rem;font-size:.63rem;color:var(--text-muted);letter-spacing:.04em}
+.cl-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.cl-dashed{width:16px;height:0;border-top:2px dashed currentColor;flex-shrink:0}
 .cl-morning{background:var(--col-morning)}
 .cl-noon{background:var(--col-noon)}
 .cl-evening{background:var(--col-evening)}
-.cl-max{color:var(--col-max)}
-.cl-min{color:var(--col-min)}
+.cl-max-c{color:var(--col-max)}
+.cl-min-c{color:var(--col-min)}
+/* Hours info badge inside legend */
+.legend-hours-info{
+  font-size:.62rem;color:rgba(122,158,200,0.7);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.09);
+  border-radius:6px;padding:.18rem .55rem;
+  white-space:nowrap;letter-spacing:.03em;
+  align-self:center;
+}
 #temp-chart{width:100%;display:block;overflow:visible}
 .chart-outer{position:relative}
-.chart-tooltip{
-  position:absolute;background:rgba(8,18,36,0.94);border:1px solid rgba(255,255,255,0.14);
-  border-radius:8px;padding:.4rem .65rem;font-size:.7rem;color:var(--text);
-  pointer-events:none;white-space:nowrap;opacity:0;transition:opacity .15s;z-index:10
-}
+.chart-tooltip{position:absolute;background:rgba(8,18,36,0.94);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:.4rem .65rem;font-size:.7rem;color:var(--text);pointer-events:none;white-space:nowrap;opacity:0;transition:opacity .15s;z-index:10}
 
-/* Day cards — one per day */
-.week-grid{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:.5rem;
-  margin-bottom:1.8rem
-}
+/* Day cards */
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;margin-bottom:1.8rem}
 @media(max-width:640px){.week-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:400px){.week-grid{grid-template-columns:repeat(2,1fr)}}
-
 .day-card{
-  background:rgba(10,20,40,0.55);
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:14px;padding:.75rem .5rem;
-  text-align:center;
+  background:rgba(10,20,40,0.55);border:1px solid rgba(255,255,255,0.10);
+  border-radius:14px;padding:.75rem .5rem;text-align:center;
   position:relative;overflow:hidden;
-  transition:transform .18s,filter .18s;
+  transition:transform .18s,filter .18s,border-color .18s;
+  cursor:pointer;
 }
-.day-card:hover{transform:translateY(-2px);filter:brightness(1.10)}
+.day-card:hover{transform:translateY(-2px);filter:brightness(1.12)}
 .day-card.today{border-color:var(--gold);background:rgba(240,192,96,0.07)}
-.day-card::before{
-  content:'';position:absolute;inset:0;border-radius:inherit;
-  background:var(--slot-tint,var(--tint-default));pointer-events:none
-}
-
+.day-card.selected{border-color:#a0c8ff !important;box-shadow:0 0 0 2px rgba(160,200,255,0.2)}
+.day-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:var(--slot-tint,var(--tint-default));pointer-events:none}
 .dc-name{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;font-weight:500;color:var(--text-muted);margin-bottom:.15rem;position:relative}
 .day-card.today .dc-name{color:var(--gold)}
+.day-card.selected .dc-name{color:#a0c8ff}
 .dc-date{font-size:.58rem;color:var(--text-muted);opacity:.7;margin-bottom:.5rem;font-variant-numeric:tabular-nums;position:relative}
-.dc-minmax{
-  display:flex;justify-content:center;gap:.3rem;
-  font-size:.72rem;font-variant-numeric:tabular-nums;margin-bottom:.55rem;position:relative
-}
+.dc-minmax{display:flex;justify-content:center;gap:.3rem;font-size:.72rem;font-variant-numeric:tabular-nums;margin-bottom:.55rem;position:relative}
 .dc-max{color:var(--col-max);font-weight:500}
 .dc-min{color:var(--col-min)}
-
-/* Three moment rows inside one card */
 .dc-moments{display:flex;flex-direction:column;gap:.3rem;position:relative}
-.dc-moment-row{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:.18rem .3rem;border-radius:6px;
-  background:rgba(255,255,255,0.04);
-}
+.dc-moment-row{display:flex;align-items:center;justify-content:space-between;padding:.18rem .3rem;border-radius:6px;background:rgba(255,255,255,0.04)}
 .dcm-label{font-size:.55rem;text-transform:uppercase;letter-spacing:.09em;font-weight:500;min-width:22px}
 .dcm-label-m{color:var(--col-morning)}
 .dcm-label-n{color:var(--col-noon)}
 .dcm-label-e{color:var(--col-evening)}
 .dcm-icon{font-size:.9rem;line-height:1}
 .dcm-temp{font-size:.75rem;font-weight:500;font-variant-numeric:tabular-nums;color:var(--text)}
-
-/* Sun row at bottom */
-.dc-sun{
-  display:flex;flex-direction:column;gap:.15rem;
-  margin-top:.5rem;padding-top:.45rem;
-  border-top:1px solid rgba(255,255,255,0.08);
-  position:relative
-}
+.dc-sun{display:flex;flex-direction:column;gap:.15rem;margin-top:.5rem;padding-top:.45rem;border-top:1px solid rgba(255,255,255,0.08);position:relative}
 .dc-sun-row{display:flex;align-items:center;justify-content:center;gap:.25rem;font-size:.58rem;color:var(--text-muted);font-variant-numeric:tabular-nums}
 .dc-sun-row svg{width:9px;height:9px;color:var(--gold);flex-shrink:0}
+
+/* ── Detail panel ── */
+#detail-panel{
+  display:none;
+  background:rgba(8,18,40,0.85);
+  border:1px solid rgba(160,200,255,0.25);
+  border-radius:18px;
+  padding:1.4rem 1.3rem 1.2rem;
+  margin-bottom:1.8rem;
+  animation:slideIn .22s ease;
+}
+#detail-panel.visible{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+.dp-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.1rem;gap:1rem;flex-wrap:wrap;
+}
+.dp-title{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;color:var(--text)}
+.dp-sub{font-size:.72rem;color:var(--text-muted);font-weight:300;margin-top:.1rem}
+.dp-close{
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);
+  border-radius:8px;padding:.3rem .65rem;color:var(--text-muted);font-size:.72rem;
+  cursor:pointer;transition:background .15s;letter-spacing:.04em;white-space:nowrap;
+}
+.dp-close:hover{background:rgba(255,255,255,0.14)}
+
+/* Hourly mini-chart */
+.dp-chart-outer{position:relative;margin-bottom:1.1rem}
+#detail-chart{width:100%;display:block;overflow:visible}
+
+/* Hourly scroll strip */
+.dp-strip{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:52px;
+  gap:.45rem;
+  overflow-x:auto;
+  padding-bottom:.5rem;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,0.15) transparent;
+}
+.dp-strip::-webkit-scrollbar{height:4px}
+.dp-strip::-webkit-scrollbar-track{background:transparent}
+.dp-strip::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px}
+
+.dp-hour{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:.45rem .3rem;
+  text-align:center;
+  flex-shrink:0;
+  transition:background .15s;
+}
+.dp-hour.is-morning{border-color:rgba(249,217,122,0.35);background:rgba(249,217,122,0.06)}
+.dp-hour.is-noon   {border-color:rgba(200,222,255,0.35);background:rgba(200,222,255,0.05)}
+.dp-hour.is-evening{border-color:rgba(192,122,220,0.35);background:rgba(192,122,220,0.06)}
+.dp-hour.is-night  {background:rgba(10,20,50,0.6)}
+.dph-time{font-size:.62rem;color:var(--text-muted);font-variant-numeric:tabular-nums;margin-bottom:.3rem;font-weight:500}
+.dph-icon{font-size:1.1rem;line-height:1;margin-bottom:.25rem}
+.dph-temp{font-size:.78rem;font-weight:500;color:var(--text);font-variant-numeric:tabular-nums;margin-bottom:.2rem}
+.dph-hum{
+  font-size:.6rem;color:#70b8ff;font-variant-numeric:tabular-nums;
+  display:flex;align-items:center;justify-content:center;gap:.18rem;
+}
+.dph-hum svg{width:8px;height:8px;flex-shrink:0}
 
 .footer-note{display:block;text-align:center;font-size:.7rem;color:var(--text-muted);opacity:.45;margin-top:1.8rem;letter-spacing:.04em}
 </style>
 </head>
 <body>
-
 <div class="stars" id="stars"></div>
-
 <div class="app">
   <header>
     <div class="logo">Ciel <em>Ouvert</em></div>
@@ -203,14 +226,12 @@ header{text-align:center;margin-bottom:2.5rem}
   <div class="search-box">
     <input class="search-input" id="place-input" type="text" placeholder="Paris, Tokyo, New York…" autocomplete="off"/>
     <button class="search-btn" id="search-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       Rechercher
     </button>
   </div>
 
-  <div class="error-msg" id="error-msg">Lieu introuvable. Essayez un autre nom de ville.</div>
+  <div class="error-msg" id="error-msg"></div>
   <div class="loader" id="loader">Récupération des données<span class="loader-dot">.</span><span class="loader-dot">.</span><span class="loader-dot">.</span></div>
 
   <div id="weather-output">
@@ -219,7 +240,6 @@ header{text-align:center;margin-bottom:2.5rem}
       <div class="location-country" id="loc-country"></div>
     </div>
 
-    <!-- Today hero -->
     <div class="today-hero">
       <div>
         <div class="today-label">En ce moment</div>
@@ -230,29 +250,28 @@ header{text-align:center;margin-bottom:2.5rem}
       <div class="today-sun-block">
         <div class="sun-item">
           <div><div class="sun-label">Lever</div><div class="sun-time" id="today-sunrise"></div></div>
-          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v3M4.22 10.22l2.12 2.12M1 18h3M20 18h3M17.66 12.34l2.12-2.12M12 6a6 6 0 0 1 6 6M2 18a10 10 0 0 1 20 0"/>
-          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.22 10.22l2.12 2.12M1 18h3M20 18h3M17.66 12.34l2.12-2.12M12 6a6 6 0 0 1 6 6M2 18a10 10 0 0 1 20 0"/></svg>
         </div>
         <div class="sun-item">
           <div><div class="sun-label">Coucher</div><div class="sun-time" id="today-sunset"></div></div>
-          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 10v3M4.22 13.78l2.12 2.12M1 18h3M20 18h3M17.66 15.66l2.12 2.12M12 6a6 6 0 0 1 6 6M2 22a10 10 0 0 1 20 0"/>
-          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10v3M4.22 13.78l2.12 2.12M1 18h3M20 18h3M17.66 15.66l2.12 2.12M12 6a6 6 0 0 1 6 6M2 22a10 10 0 0 1 20 0"/></svg>
         </div>
       </div>
     </div>
 
-    <!-- Chart -->
+    <!-- Weekly chart -->
     <div class="chart-wrap">
       <div class="chart-top">
-        <div class="chart-title">Températures · 7 jours</div>
+        <div>
+          <div class="chart-title">Températures · 7 jours</div>
+        </div>
         <div class="chart-legend">
-          <div class="cl-item"><div class="cl-line cl-morning"></div>Matin</div>
-          <div class="cl-item"><div class="cl-line cl-noon"></div>Midi</div>
-          <div class="cl-item"><div class="cl-line cl-evening"></div>Soir</div>
-          <div class="cl-item cl-max"><div class="cl-dashed"></div>Max</div>
-          <div class="cl-item cl-min"><div class="cl-dashed"></div>Min</div>
+          <div class="cl-item"><div class="cl-dot cl-morning"></div><span>Matin <span style="opacity:.6">(8h)</span></span></div>
+          <div class="cl-item"><div class="cl-dot cl-noon"></div><span>Midi <span style="opacity:.6">(13h)</span></span></div>
+          <div class="cl-item"><div class="cl-dot cl-evening"></div><span>Soir <span style="opacity:.6">(19h)</span></span></div>
+          <div class="cl-item cl-max-c"><div class="cl-dashed"></div>Max</div>
+          <div class="cl-item cl-min-c"><div class="cl-dashed"></div>Min</div>
+          <div class="legend-hours-info">💡 Cliquez une journée pour le détail heure par heure</div>
         </div>
       </div>
       <div class="chart-outer">
@@ -261,8 +280,23 @@ header{text-align:center;margin-bottom:2.5rem}
       </div>
     </div>
 
-    <!-- Week grid: one card per day -->
+    <!-- Day cards -->
     <div class="week-grid" id="week-grid"></div>
+
+    <!-- Detail panel (appears after week grid on click) -->
+    <div id="detail-panel">
+      <div class="dp-header">
+        <div>
+          <div class="dp-title" id="dp-title"></div>
+          <div class="dp-sub" id="dp-sub"></div>
+        </div>
+        <button class="dp-close" id="dp-close">✕ Fermer</button>
+      </div>
+      <div class="dp-chart-outer">
+        <svg id="detail-chart" height="130"></svg>
+      </div>
+      <div class="dp-strip" id="dp-strip"></div>
+    </div>
 
     <span class="footer-note">Données : Open-Meteo &amp; Open-Meteo Geocoding · Mise à jour en temps réel</span>
   </div>
@@ -272,6 +306,7 @@ header{text-align:center;margin-bottom:2.5rem}
 const DAYS_FULL=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 const DAYS_SHORT=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
 const MONTHS=['jan.','fév.','mar.','avr.','mai','juin','juil.','août','sep.','oct.','nov.','déc.'];
+const MONTHS_FULL=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
 const WMO_DESC={
   0:'Ciel dégagé',1:'Principalement dégagé',2:'Partiellement nuageux',3:'Couvert',
@@ -309,12 +344,16 @@ function fmtTime(iso){return new Date(iso).toLocaleTimeString('fr-FR',{hour:'2-d
 
 const SVG_RISE=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M4.22 10.22l2.12 2.12M1 18h3M20 18h3M17.66 12.34l2.12-2.12M12 6a6 6 0 0 1 6 6M2 18a10 10 0 0 1 20 0"/></svg>`;
 const SVG_SET=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10v3M4.22 13.78l2.12 2.12M1 18h3M20 18h3M17.66 15.66l2.12 2.12M12 6a6 6 0 0 1 6 6M2 22a10 10 0 0 1 20 0"/></svg>`;
+const SVG_DROP=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C12 2 5 10 5 15a7 7 0 0 0 14 0C19 10 12 2 12 2z"/></svg>`;
 
 const MOMENTS=[
-  {label:'M', cls:'dcm-label-m', hour:8},
-  {label:'N', cls:'dcm-label-n', hour:13},
-  {label:'S', cls:'dcm-label-e', hour:19},
+  {label:'M',cls:'dcm-label-m',hour:8},
+  {label:'N',cls:'dcm-label-n',hour:13},
+  {label:'S',cls:'dcm-label-e',hour:19},
 ];
+
+/* Global state */
+let _data=null, _hMap=null;
 
 async function geocode(place){
   const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(place)}&count=1&language=fr&format=json`);
@@ -323,21 +362,22 @@ async function geocode(place){
   return d.results[0];
 }
 async function fetchWeather(lat,lon,tz){
-  const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=${encodeURIComponent(tz)}&forecast_days=7&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&hourly=temperature_2m,weather_code`;
+  const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&timezone=${encodeURIComponent(tz)}&forecast_days=7&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&hourly=temperature_2m,weather_code,relative_humidity_2m`;
   const r=await fetch(url);
   if(!r.ok)throw new Error('API météo indisponible');
   return r.json();
 }
 function buildHourlyMap(times){const m={};times.forEach((t,i)=>m[t]=i);return m}
-
 function showError(msg){const el=document.getElementById('error-msg');el.textContent=msg;el.classList.add('visible')}
 function hideError(){document.getElementById('error-msg').classList.remove('visible')}
 function showLoader(){document.getElementById('loader').classList.add('visible')}
 function hideLoader(){document.getElementById('loader').classList.remove('visible')}
 function showOutput(){document.getElementById('weather-output').classList.add('visible')}
 
-/* ── Chart ────────────────────────────────────────── */
-function renderChart(daily, hMap, hourly){
+/* ══════════════════════════════════════════════
+   WEEKLY CHART
+══════════════════════════════════════════════ */
+function renderChart(daily,hMap,hourly){
   const svg=document.getElementById('temp-chart');
   const W=svg.parentElement.clientWidth||800;
   const H=210;
@@ -346,10 +386,8 @@ function renderChart(daily, hMap, hourly){
   svg.innerHTML='';
 
   const PL=38,PR=16,PT=24,PB=30;
-  const CW=W-PL-PR, CH=H-PT-PB;
-  const n=daily.time.length;
+  const CW=W-PL-PR,CH=H-PT-PB,n=daily.time.length;
 
-  /* Collect data */
   const temps={morning:[],noon:[],evening:[],max:[],min:[]};
   daily.time.forEach((dateStr,i)=>{
     [[8,'morning'],[13,'noon'],[19,'evening']].forEach(([h,k])=>{
@@ -361,27 +399,24 @@ function renderChart(daily, hMap, hourly){
     temps.min.push(Math.round(daily.temperature_2m_min[i]));
   });
 
-  const allVals=[...temps.morning,...temps.noon,...temps.evening,...temps.max,...temps.min];
-  const minT=Math.min(...allVals)-2, maxT=Math.max(...allVals)+2, range=maxT-minT||1;
+  const allV=[...temps.morning,...temps.noon,...temps.evening,...temps.max,...temps.min];
+  const minT=Math.min(...allV)-2,maxT=Math.max(...allV)+2,range=maxT-minT||1;
+  const tx=i=>PL+(i/(n-1))*CW;
+  const ty=t=>PT+(1-(t-minT)/range)*CH;
 
-  function tx(i){return PL+(i/(n-1))*CW}
-  function ty(t){return PT+(1-(t-minT)/range)*CH}
-
-  function smoothPath(pts){
+  function smooth(pts){
     if(pts.length<2)return'';
     let d=`M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
     for(let i=0;i<pts.length-1;i++){
-      const cp1x=pts[i][0]+(pts[i+1][0]-pts[i][0])*.45;
-      const cp1y=pts[i][1];
-      const cp2x=pts[i+1][0]-(pts[i+1][0]-pts[i][0])*.45;
-      const cp2y=pts[i+1][1];
+      const cp1x=pts[i][0]+(pts[i+1][0]-pts[i][0])*.45, cp1y=pts[i][1];
+      const cp2x=pts[i+1][0]-(pts[i+1][0]-pts[i][0])*.45, cp2y=pts[i+1][1];
       d+=` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${pts[i+1][0].toFixed(1)} ${pts[i+1][1].toFixed(1)}`;
     }
     return d;
   }
-  function areaPath(pts){
+  function area(pts){
     const base=PT+CH;
-    return smoothPath(pts)+` L ${pts[pts.length-1][0].toFixed(1)} ${base} L ${pts[0][0].toFixed(1)} ${base} Z`;
+    return smooth(pts)+` L ${pts[pts.length-1][0].toFixed(1)} ${base} L ${pts[0][0].toFixed(1)} ${base} Z`;
   }
 
   const ns='http://www.w3.org/2000/svg';
@@ -392,7 +427,6 @@ function renderChart(daily, hMap, hourly){
     return e;
   }
 
-  /* Gradients */
   const defs=el('defs',{},svg);
   [{id:'gm',c:'#f9d97a'},{id:'gn',c:'#c8deff'},{id:'ge',c:'#c07adc'}].forEach(g=>{
     const lg=el('linearGradient',{id:g.id,x1:'0',y1:'0',x2:'0',y2:'1'},defs);
@@ -400,15 +434,15 @@ function renderChart(daily, hMap, hourly){
     el('stop',{'offset':'100%','stop-color':g.c,'stop-opacity':'0'},lg);
   });
 
-  /* Grid + Y labels */
   for(let s=0;s<=4;s++){
-    const t=minT+(range/4)*s, y=ty(t);
+    const t=minT+(range/4)*s,y=ty(t);
     el('line',{x1:PL,y1:y,x2:PL+CW,y2:y,stroke:'rgba(255,255,255,0.07)','stroke-width':'1'},svg);
     const lb=el('text',{x:PL-5,y:y+4,fill:'#7a9ec8','font-size':'10','font-family':'DM Sans,sans-serif','text-anchor':'end'},svg);
     lb.textContent=Math.round(t)+'°';
   }
 
-  /* X day labels & vertical guides */
+  const tooltip=document.getElementById('chart-tooltip'),outer=svg.parentElement;
+
   daily.time.forEach((dateStr,i)=>{
     const d=new Date(dateStr+'T12:00:00');
     const lbl=i===0?'Auj.':DAYS_SHORT[d.getDay()];
@@ -418,16 +452,12 @@ function renderChart(daily, hMap, hourly){
     t.textContent=lbl;
   });
 
-  const tooltip=document.getElementById('chart-tooltip');
-  const outerEl=svg.parentElement;
-
-  function makeDot(x,y,strokeColor,label,dateStr,temp){
-    const c=el('circle',{cx:x,cy:y,r:'4',fill:'#081524',stroke:strokeColor,'stroke-width':'2',style:'cursor:pointer;transition:r .15s'},svg);
+  function makeDot(x,y,color,label,dateStr,temp){
+    const c=el('circle',{cx:x,cy:y,r:'4',fill:'#081524',stroke:color,'stroke-width':'2',style:'cursor:pointer;transition:r .15s'},svg);
     c.addEventListener('mouseenter',()=>{
       const d=new Date(dateStr+'T12:00:00');
-      const ds=`${d.getDate()} ${MONTHS[d.getMonth()]}`;
-      tooltip.innerHTML=`<span style="color:${strokeColor};font-weight:500">${label}</span>&nbsp;&nbsp;${ds} · <strong>${temp}°</strong>`;
-      const rb=outerEl.getBoundingClientRect(), cb=c.getBoundingClientRect();
+      tooltip.innerHTML=`<span style="color:${color};font-weight:500">${label}</span>&nbsp;&nbsp;${d.getDate()} ${MONTHS[d.getMonth()]} · <strong>${temp}°</strong>`;
+      const rb=outer.getBoundingClientRect(),cb=c.getBoundingClientRect();
       tooltip.style.left=(cb.left-rb.left+10)+'px';
       tooltip.style.top=(cb.top-rb.top-48)+'px';
       tooltip.style.opacity='1';
@@ -436,66 +466,202 @@ function renderChart(daily, hMap, hourly){
     c.addEventListener('mouseleave',()=>{tooltip.style.opacity='0';c.setAttribute('r','4')});
   }
 
-  /* Solid curves: areas first, then lines, then dots */
-  const solidSeries=[
-    {k:'morning',color:'#f9d97a',gradId:'gm',label:'Matin 8h',opacity:'.16'},
-    {k:'noon',   color:'#c8deff',gradId:'gn',label:'Midi 13h',opacity:'.13'},
-    {k:'evening',color:'#c07adc',gradId:'ge',label:'Soir 19h',opacity:'.15'},
+  const solid=[
+    {k:'morning',color:'#f9d97a',gid:'gm',label:'Matin 8h',op:'.16'},
+    {k:'noon',   color:'#c8deff',gid:'gn',label:'Midi 13h',op:'.13'},
+    {k:'evening',color:'#c07adc',gid:'ge',label:'Soir 19h',op:'.15'},
   ];
-  solidSeries.forEach(s=>{
+  solid.forEach(s=>{
     const pts=temps[s.k].map((t,i)=>[tx(i),ty(t)]);
-    el('path',{d:areaPath(pts),fill:`url(#${s.gradId})`,opacity:s.opacity},svg);
-    el('path',{d:smoothPath(pts),fill:'none',stroke:s.color,'stroke-width':'2.2','stroke-linecap':'round','stroke-linejoin':'round'},svg);
+    el('path',{d:area(pts),fill:`url(#${s.gid})`,opacity:s.op},svg);
+    el('path',{d:smooth(pts),fill:'none',stroke:s.color,'stroke-width':'2.2','stroke-linecap':'round','stroke-linejoin':'round'},svg);
   });
 
-  /* Dashed curves: max & min */
-  const dashedSeries=[
-    {k:'max',color:'#ff7070',label:'Max'},
-    {k:'min',color:'#70b8ff',label:'Min'},
-  ];
-  dashedSeries.forEach(s=>{
+  const dashed=[{k:'max',color:'#ff7070',label:'Max'},{k:'min',color:'#70b8ff',label:'Min'}];
+  dashed.forEach(s=>{
     const pts=temps[s.k].map((t,i)=>[tx(i),ty(t)]);
-    el('path',{d:smoothPath(pts),fill:'none',stroke:s.color,'stroke-width':'1.6','stroke-dasharray':'5,4','stroke-linecap':'round','stroke-linejoin':'round'},svg);
+    el('path',{d:smooth(pts),fill:'none',stroke:s.color,'stroke-width':'1.6','stroke-dasharray':'5,4','stroke-linecap':'round'},svg);
   });
 
-  /* Temp labels on solid curves — staggered offsets to avoid overlap */
-  const offsets={morning:-10, noon:-18, evening:-26};
-  solidSeries.forEach(s=>{
+  const offsets={morning:-10,noon:-18,evening:-26};
+  solid.forEach(s=>{
     temps[s.k].forEach((t,i)=>{
-      const x=tx(i), y=ty(t);
-      const lbl=el('text',{x,y:y+offsets[s.k],fill:s.color,'font-size':'9.5','font-family':'DM Sans,sans-serif','font-weight':'500','text-anchor':'middle'},svg);
-      lbl.textContent=t+'°';
+      const x=tx(i),y=ty(t);
+      const lb=el('text',{x,y:y+offsets[s.k],fill:s.color,'font-size':'9.5','font-family':'DM Sans,sans-serif','font-weight':'500','text-anchor':'middle'},svg);
+      lb.textContent=t+'°';
     });
   });
 
-  /* Dots on solid curves */
-  solidSeries.forEach(s=>{
-    temps[s.k].forEach((t,i)=>makeDot(tx(i),ty(t),s.color,s.label,daily.time[i],t));
+  solid.forEach(s=>temps[s.k].forEach((t,i)=>makeDot(tx(i),ty(t),s.color,s.label,daily.time[i],t)));
+  dashed.forEach(s=>temps[s.k].forEach((t,i)=>makeDot(tx(i),ty(t),s.color,s.label,daily.time[i],t)));
+}
+
+/* ══════════════════════════════════════════════
+   DETAIL PANEL (hourly)
+══════════════════════════════════════════════ */
+function getMomentClass(h){
+  if(h>=6&&h<11) return'is-morning';
+  if(h>=11&&h<16)return'is-noon';
+  if(h>=16&&h<22)return'is-evening';
+  return'is-night';
+}
+
+function renderDetailChart(hours){
+  /* hours: array of {h, temp, hum} for every 2h */
+  const svg=document.getElementById('detail-chart');
+  const W=svg.parentElement.clientWidth||800;
+  const H=130;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('width',W);
+  svg.innerHTML='';
+
+  const PL=30,PR=12,PT=22,PB=28;
+  const CW=W-PL-PR,CH=H-PT-PB,n=hours.length;
+
+  const ns='http://www.w3.org/2000/svg';
+  function el(tag,attrs,parent){
+    const e=document.createElementNS(ns,tag);
+    Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));
+    if(parent)parent.appendChild(e);
+    return e;
+  }
+
+  const temps=hours.map(x=>x.temp);
+  const hums=hours.map(x=>x.hum);
+  const minT=Math.min(...temps)-2,maxT=Math.max(...temps)+2,rangeT=maxT-minT||1;
+  const tx=i=>PL+(i/(n-1))*CW;
+  const ty=t=>PT+(1-(t-minT)/rangeT)*CH;
+
+  /* humidity bars (background) */
+  const barW=Math.max(4, CW/n*0.55);
+  hours.forEach((x,i)=>{
+    const bH=(x.hum/100)*CH*0.7;
+    el('rect',{
+      x:tx(i)-barW/2, y:PT+CH-bH,
+      width:barW, height:bH,
+      fill:'rgba(112,184,255,0.15)',rx:'2'
+    },svg);
   });
-  /* Dots on dashed curves */
-  dashedSeries.forEach(s=>{
-    temps[s.k].forEach((t,i)=>makeDot(tx(i),ty(t),s.color,s.label,daily.time[i],t));
+
+  /* grid */
+  [0,.5,1].forEach(f=>{
+    const t=minT+rangeT*f, y=ty(t);
+    el('line',{x1:PL,y1:y,x2:PL+CW,y2:y,stroke:'rgba(255,255,255,0.06)','stroke-width':'1'},svg);
+    const lb=el('text',{x:PL-4,y:y+3.5,fill:'#7a9ec8','font-size':'9','font-family':'DM Sans,sans-serif','text-anchor':'end'},svg);
+    lb.textContent=Math.round(t)+'°';
+  });
+
+  /* x labels */
+  hours.forEach((x,i)=>{
+    const lbl=el('text',{x:tx(i),y:H-6,fill:'#7a9ec8','font-size':'9','font-family':'DM Sans,sans-serif','text-anchor':'middle'},svg);
+    lbl.textContent=String(x.h).padStart(2,'0')+'h';
+  });
+
+  /* smooth temp curve */
+  function smooth(pts){
+    if(pts.length<2)return'';
+    let d=`M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+    for(let i=0;i<pts.length-1;i++){
+      const cp1x=pts[i][0]+(pts[i+1][0]-pts[i][0])*.45,cp1y=pts[i][1];
+      const cp2x=pts[i+1][0]-(pts[i+1][0]-pts[i][0])*.45,cp2y=pts[i+1][1];
+      d+=` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${pts[i+1][0].toFixed(1)} ${pts[i+1][1].toFixed(1)}`;
+    }
+    return d;
+  }
+
+  const defs=el('defs',{},svg);
+  const lg=el('linearGradient',{id:'dc-g',x1:'0',y1:'0',x2:'0',y2:'1'},defs);
+  el('stop',{'offset':'0%','stop-color':'#c8deff','stop-opacity':'.7'},lg);
+  el('stop',{'offset':'100%','stop-color':'#c8deff','stop-opacity':'0'},lg);
+
+  const pts=hours.map((x,i)=>[tx(i),ty(x.temp)]);
+  const areaD=smooth(pts)+` L ${pts[pts.length-1][0].toFixed(1)} ${PT+CH} L ${pts[0][0].toFixed(1)} ${PT+CH} Z`;
+  el('path',{d:areaD,fill:'url(#dc-g)',opacity:'.18'},svg);
+  el('path',{d:smooth(pts),fill:'none',stroke:'#c8deff','stroke-width':'2','stroke-linecap':'round'},svg);
+
+  /* dots + temp labels */
+  pts.forEach(([x,y],i)=>{
+    el('circle',{cx:x,cy:y,r:'3',fill:'#081524',stroke:'#c8deff','stroke-width':'1.8'},svg);
+    const lb=el('text',{x,y:y-7,fill:'#c8deff','font-size':'9','font-family':'DM Sans,sans-serif','font-weight':'500','text-anchor':'middle'},svg);
+    lb.textContent=hours[i].temp+'°';
   });
 }
 
-/* ── Week grid ─────────────────────────────────────── */
+function openDetail(dayIndex){
+  const daily=_data.daily;
+  const hourly=_data.hourly;
+  const dateStr=daily.time[dayIndex];
+  const d=new Date(dateStr+'T12:00:00');
+  const isToday=dayIndex===0;
+  const dayLabel=isToday?'Aujourd\'hui':DAYS_FULL[d.getDay()];
+  const dateLabel=`${d.getDate()} ${MONTHS_FULL[d.getMonth()]}`;
+
+  document.getElementById('dp-title').textContent=`${dayLabel} — ${dateLabel}`;
+  document.getElementById('dp-sub').textContent=`Lever ${fmtTime(daily.sunrise[dayIndex])} · Coucher ${fmtTime(daily.sunset[dayIndex])} · Max ${Math.round(daily.temperature_2m_max[dayIndex])}° / Min ${Math.round(daily.temperature_2m_min[dayIndex])}°`;
+
+  /* Collect every 2 hours: 0,2,4,...,22 */
+  const hourSlots=[];
+  for(let h=0;h<24;h+=2){
+    const key=`${dateStr}T${String(h).padStart(2,'0')}:00`;
+    const idx=_hMap[key];
+    if(idx!=null){
+      hourSlots.push({
+        h,
+        temp:Math.round(hourly.temperature_2m[idx]),
+        code:hourly.weather_code[idx],
+        hum:Math.round(hourly.relative_humidity_2m[idx])
+      });
+    }
+  }
+
+  /* Mini chart */
+  requestAnimationFrame(()=>renderDetailChart(hourSlots));
+
+  /* Strip */
+  const strip=document.getElementById('dp-strip');
+  strip.innerHTML='';
+  hourSlots.forEach(slot=>{
+    const mc=getMomentClass(slot.h);
+    const div=document.createElement('div');
+    div.className=`dp-hour ${mc}`;
+    div.innerHTML=`
+      <div class="dph-time">${String(slot.h).padStart(2,'0')}h</div>
+      <div class="dph-icon">${getIcon(slot.code)}</div>
+      <div class="dph-temp">${slot.temp}°</div>
+      <div class="dph-hum">${SVG_DROP}${slot.hum}%</div>`;
+    strip.appendChild(div);
+  });
+
+  const panel=document.getElementById('detail-panel');
+  panel.classList.add('visible');
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeDetail(){
+  document.getElementById('detail-panel').classList.remove('visible');
+  document.querySelectorAll('.day-card').forEach(c=>c.classList.remove('selected'));
+}
+
+/* ══════════════════════════════════════════════
+   WEEK GRID
+══════════════════════════════════════════════ */
 function renderWeek(data){
   const daily=data.daily;
   const hourly=data.hourly;
-  const hMap=buildHourlyMap(hourly.time);
+  _hMap=buildHourlyMap(hourly.time);
+  _data=data;
 
-  /* Hero */
   document.getElementById('today-temp').textContent=Math.round(data.current.temperature_2m)+'°';
   document.getElementById('today-desc').textContent=getDesc(data.current.weather_code);
   document.getElementById('today-minmax').textContent=`${Math.round(daily.temperature_2m_min[0])}° — ${Math.round(daily.temperature_2m_max[0])}°`;
   document.getElementById('today-sunrise').textContent=fmtTime(daily.sunrise[0]);
   document.getElementById('today-sunset').textContent=fmtTime(daily.sunset[0]);
 
-  /* Chart after layout */
-  requestAnimationFrame(()=>renderChart(daily,hMap,hourly));
+  requestAnimationFrame(()=>renderChart(daily,_hMap,hourly));
 
   const grid=document.getElementById('week-grid');
   grid.innerHTML='';
+  closeDetail();
 
   daily.time.forEach((dateStr,i)=>{
     const d=new Date(dateStr+'T12:00:00');
@@ -505,17 +671,14 @@ function renderWeek(data){
     const maxT=Math.round(daily.temperature_2m_max[i]);
     const minT=Math.round(daily.temperature_2m_min[i]);
 
-    /* dominant weather code (noon or daily) */
     const noonKey=`${dateStr}T13:00`;
-    const noonIdx=hMap[noonKey];
+    const noonIdx=_hMap[noonKey];
     const domCode=noonIdx!=null?hourly.weather_code[noonIdx]:daily.weather_code[i];
-    const tint=wmoTint(domCode);
 
-    /* three moment rows */
     let momHTML='';
     MOMENTS.forEach(m=>{
       const key=`${dateStr}T${String(m.hour).padStart(2,'0')}:00`;
-      const idx=hMap[key];
+      const idx=_hMap[key];
       const temp=idx!=null?Math.round(hourly.temperature_2m[idx]):maxT;
       const code=idx!=null?hourly.weather_code[idx]:domCode;
       momHTML+=`<div class="dc-moment-row">
@@ -527,20 +690,26 @@ function renderWeek(data){
 
     const card=document.createElement('div');
     card.className='day-card'+(isToday?' today':'');
-    card.style.setProperty('--slot-tint',tint);
+    card.style.setProperty('--slot-tint',wmoTint(domCode));
+    card.dataset.index=i;
     card.innerHTML=`
       <div class="dc-name">${dayAbbr}</div>
       <div class="dc-date">${dateLabel}</div>
-      <div class="dc-minmax">
-        <span class="dc-max">${maxT}°</span>
-        <span style="color:rgba(255,255,255,0.2)">|</span>
-        <span class="dc-min">${minT}°</span>
-      </div>
+      <div class="dc-minmax"><span class="dc-max">${maxT}°</span><span style="color:rgba(255,255,255,0.2)">|</span><span class="dc-min">${minT}°</span></div>
       <div class="dc-moments">${momHTML}</div>
       <div class="dc-sun">
         <div class="dc-sun-row">${SVG_RISE}&nbsp;${fmtTime(daily.sunrise[i])}</div>
         <div class="dc-sun-row">${SVG_SET}&nbsp;${fmtTime(daily.sunset[i])}</div>
       </div>`;
+
+    card.addEventListener('click',()=>{
+      const wasSelected=card.classList.contains('selected');
+      document.querySelectorAll('.day-card').forEach(c=>c.classList.remove('selected'));
+      if(wasSelected){closeDetail();return;}
+      card.classList.add('selected');
+      openDetail(i);
+    });
+
     grid.appendChild(card);
   });
 }
@@ -567,6 +736,10 @@ async function search(){
 
 document.getElementById('search-btn').addEventListener('click',search);
 document.getElementById('place-input').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+document.getElementById('dp-close').addEventListener('click',()=>{
+  closeDetail();
+  document.getElementById('week-grid').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
 
 /* Stars */
 const starsEl=document.getElementById('stars');
