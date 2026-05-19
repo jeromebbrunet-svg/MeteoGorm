@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect x="0" y="0" width="220" height="220" rx="38" fill="#EBF4FF"/>
+  <!-- Arcs colorés -->
+  <path d="M 110,195 A 85,85 0 0,0 195,110" fill="none" stroke="#E24B4A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 25,110 A 85,85 0 0,0 110,195" fill="none" stroke="#378ADD" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 110,25 A 85,85 0 0,0 25,110" fill="none" stroke="#EF9F27" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 195,110 A 85,85 0 0,0 110,25" fill="none" stroke="#639922" stroke-width="18" stroke-linecap="round"/>
+  <!-- Centre blanc -->
+  <circle cx="110" cy="110" r="42" fill="white"/>
+  <!-- Soleil -->
+  <circle cx="110" cy="110" r="15" fill="#EF9F27"/>
+  <g stroke="#EF9F27" stroke-width="3" stroke-linecap="round">
+    <line x1="110" y1="88" x2="110" y2="80"/>
+    <line x1="110" y1="132" x2="110" y2="140"/>
+    <line x1="88" y1="110" x2="80" y2="110"/>
+    <line x1="132" y1="110" x2="140" y2="110"/>
+    <line x1="94.5" y1="94.5" x2="89" y2="89"/>
+    <line x1="125.5" y1="94.5" x2="131" y2="89"/>
+    <line x1="94.5" y1="125.5" x2="89" y2="131"/>
+    <line x1="125.5" y1="125.5" x2="131" y2="131"/>
+  </g>
+</svg>
