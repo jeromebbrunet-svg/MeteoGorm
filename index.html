@@ -229,6 +229,64 @@ header{text-align:center;margin-bottom:2.5rem}
 
 
 .footer-note{display:block;text-align:center;font-size:.7rem;color:var(--text-muted);opacity:.45;margin-top:1.8rem;letter-spacing:.04em}
+
+/* ══════════════════════════════════════════════
+   MOBILE — max 480px
+══════════════════════════════════════════════ */
+@media(max-width:480px){
+  body{padding:1.2rem .75rem 4rem}
+
+  /* Header */
+  header{margin-bottom:1.6rem}
+  .logo{font-size:1.7rem}
+  .subtitle{font-size:.65rem;letter-spacing:.08em}
+
+  /* Search */
+  .search-box{gap:.45rem;margin-bottom:1.8rem}
+  .search-input{padding:.7rem .85rem;font-size:.9rem}
+  .search-btn{padding:.7rem 1rem;font-size:.8rem}
+  .geo-btn{padding:.7rem}
+
+  /* Today hero — stack on mobile */
+  .today-hero{flex-direction:column;align-items:flex-start;gap:.8rem;margin-bottom:1.4rem}
+  .today-hero-left{gap:.9rem;flex-wrap:nowrap;align-items:center}
+  .location-name{font-size:1.3rem}
+  .location-country{font-size:.7rem}
+  .today-temp-inline{font-size:1.9rem}
+  .today-desc{font-size:.78rem}
+  .today-minmax{font-size:.72rem}
+  .today-sun-block{gap:.85rem}
+  .sun-label{font-size:.6rem}
+  .sun-time{font-size:.82rem}
+  .sun-icon{width:13px;height:13px}
+  .sun-divider{height:1.5rem}
+
+  /* Weekly chart wrap */
+  .chart-wrap{padding:.85rem .65rem .75rem;margin-bottom:1.1rem}
+  .chart-top{margin-bottom:.65rem;gap:.5rem}
+  .chart-title{font-size:.63rem}
+  .chart-legend{gap:.45rem}
+  .cl-item{font-size:.58rem}
+  .legend-hours-info{font-size:.56rem;padding:.14rem .4rem}
+
+  /* Day cards grid — 2 columns on small phones */
+  .week-grid{grid-template-columns:repeat(2,1fr);gap:.4rem;margin-bottom:1.4rem}
+  .day-card{padding:.6rem .4rem;border-radius:12px}
+  .dc-name{font-size:.58rem}
+  .dc-date{font-size:.54rem;margin-bottom:.4rem}
+  .dc-minmax{font-size:.66rem;margin-bottom:.45rem}
+  .dcm-label{font-size:.5rem;min-width:18px}
+  .dcm-icon svg{width:14px;height:14px}
+  .dcm-temp{font-size:.68rem}
+  .dc-moment-row{padding:.14rem .25rem}
+  .dc-sun-row{font-size:.54rem}
+
+  /* Detail panel */
+  #detail-panel{padding:1rem .85rem .9rem;border-radius:14px}
+  .dp-title{font-size:1rem}
+  .dp-sub{font-size:.65rem}
+  .dp-close{font-size:.65rem;padding:.25rem .5rem}
+}
 </style>
 </head>
 <body>
